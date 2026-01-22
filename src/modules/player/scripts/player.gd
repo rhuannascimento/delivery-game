@@ -6,7 +6,7 @@ extends VehicleBody3D
 
 func _physics_process(delta):
 	var accelerate = Input.get_action_strength("ui_up") - Input.get_action_strength("ui_down")
-	var steer = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	var steer = Input.get_action_strength("ui_left") - Input.get_action_strength("ui_right")
 
 	engine_force = accelerate * engine_power
 	steering = steer * max_steer
