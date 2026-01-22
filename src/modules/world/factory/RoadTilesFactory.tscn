@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvx06ecnd3q4j"]
+
+[ext_resource type="PackedScene" uid="uid://dmul745bjbmjs" path="res://assets/models/kenney_nature-kit/Models/GLTF format/ground_pathOpen.glb" id="1_8f21f"]
+
+[node name="RoadTilesFactory" type="Node3D"]
+
+[node name="ground_pathOpen2" parent="." instance=ExtResource("1_8f21f")]

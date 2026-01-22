@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://0hdpdwqg325s"]
+
+[ext_resource type="PackedScene" uid="uid://bd7u4u2glu486" path="res://assets/models/kenney_survival-kit/Models/GLB format/grass-large.glb" id="25_rbg37"]
+[ext_resource type="PackedScene" uid="uid://n3h8u0sfhiqf" path="res://assets/models/kenney_survival-kit/Models/GLB format/grass.glb" id="26_beu7t"]
+
+[node name="NatureTilesFactory" type="Node3D"]
+
+[node name="grass-large2" parent="." instance=ExtResource("25_rbg37")]
+
+[node name="grass2" parent="." instance=ExtResource("26_beu7t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
