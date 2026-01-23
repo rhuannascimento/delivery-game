@@ -8,4 +8,4 @@
 [node name="Map" parent="." instance=ExtResource("1_hk4rc")]
 
 [node name="Player" parent="." instance=ExtResource("2_chrbn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.312912, 0.2940941, 10.368698)
+transform = Transform3D(0.43070012, 0, 0.90249515, 0, 1, 0, -0.90249515, 0, 0.43070012, -33.816208, 0.4721229, -3.967556)
