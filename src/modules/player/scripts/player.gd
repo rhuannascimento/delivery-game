@@ -2,7 +2,7 @@ extends VehicleBody3D
 
 @export var engine_power := 1200.0
 @export var brake_power := 9.0
-@export var max_steer := 0.5
+@export var max_steer := 0.2
 
 func _physics_process(delta):
 	var steer = Input.get_action_strength("move_left") - Input.get_action_strength("move_right")

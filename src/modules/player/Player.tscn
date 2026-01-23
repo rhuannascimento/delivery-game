@@ -23,7 +23,7 @@ albedo_texture = ExtResource("3_26aeb")
 albedo_texture = ExtResource("3_26aeb")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gpkhd"]
-size = Vector3(1.4747925, 1.2453918, 3.2801666)
+size = Vector3(1.2806854, 1.1577625, 3.0032082)
 
 [node name="Player" type="VehicleBody3D"]
 mass = 400.0
@@ -34,8 +34,6 @@ center_of_mass = Vector3(0, -0.7, 0)
 linear_damp = 0.4
 angular_damp = 2.5
 script = ExtResource("1_gpkhd")
-engine_power = 800.0
-max_steer = 0.2
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_ntuo2")
@@ -47,7 +45,7 @@ surface_material_override/3 = SubResource("StandardMaterial3D_owynf")
 surface_material_override/4 = SubResource("StandardMaterial3D_ltia1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0002746582, 0.72550964, -0.01990509)
+transform = Transform3D(1, 0, 0, 0, 0.99996036, -0.0089010615, 0, 0.0089010615, 0.99996036, 0.0019454956, 0.6258234, 2.6198803e-05)
 shape = SubResource("BoxShape3D_gpkhd")
 
 [node name="VehicleWheel3D" type="VehicleWheel3D" parent="."]
