@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://b56o88a64h4ad"]
+[gd_scene load_steps=3 format=3 uid="uid://b56o88a64h4ad"]
+
+[ext_resource type="PackedScene" uid="uid://ds4h42e61px45" path="res://src/modules/world/World.tscn" id="1_hk4rc"]
+[ext_resource type="PackedScene" uid="uid://bm0egqymvjmbh" path="res://src/modules/player/Player.tscn" id="2_chrbn"]
 
 [node name="Main" type="Node2D"]
+
+[node name="Map" parent="." instance=ExtResource("1_hk4rc")]
+
+[node name="Player" parent="." instance=ExtResource("2_chrbn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.312912, 0.2940941, 10.368698)
