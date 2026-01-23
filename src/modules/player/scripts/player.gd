@@ -1,6 +1,6 @@
 extends VehicleBody3D
 
-@export var engine_power := 1200.0
+@export var engine_power := 3000.0
 @export var brake_power := 9.0
 @export var max_steer := 0.2
 
