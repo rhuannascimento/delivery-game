@@ -28,7 +28,7 @@ size = Vector3(1.4747925, 1.2453918, 3.2801666)
 [node name="Player" type="VehicleBody3D"]
 mass = 400.0
 physics_material_override = SubResource("PhysicsMaterial_w7btl")
-gravity_scale = 1.8
+gravity_scale = 1.5
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -0.7, 0)
 linear_damp = 0.4
@@ -54,7 +54,6 @@ shape = SubResource("BoxShape3D_gpkhd")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47670215, 0.29766828, 1.0165697)
 use_as_steering = true
 wheel_radius = 0.35
-wheel_rest_length = 0.2
 suspension_stiffness = 20.0
 damping_compression = 4.0
 damping_relaxation = 4.0
@@ -63,7 +62,6 @@ damping_relaxation = 4.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5232965, 0.31475252, 1.043014)
 use_as_steering = true
 wheel_radius = 0.35
-wheel_rest_length = 0.2
 suspension_stiffness = 20.0
 damping_compression = 4.0
 damping_relaxation = 4.0
@@ -72,7 +70,7 @@ damping_relaxation = 4.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55433166, 0.34737122, -0.71503234)
 use_as_traction = true
 wheel_radius = 0.35
-wheel_rest_length = 0.2
+wheel_rest_length = 0.35
 suspension_stiffness = 20.0
 damping_compression = 4.0
 damping_relaxation = 4.0
@@ -81,12 +79,10 @@ damping_relaxation = 4.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5235437, 0.30097076, -0.6020982)
 use_as_traction = true
 wheel_radius = 0.35
-wheel_rest_length = 0.2
+wheel_rest_length = 0.35
 suspension_stiffness = 20.0
 damping_compression = 4.0
 damping_relaxation = 4.0
-
-[node name="CenterOfMass" type="Node3D" parent="."]
 
 [node name="CameraController" type="Node3D" parent="."]
 script = ExtResource("3_ntuo2")

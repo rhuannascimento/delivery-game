@@ -5,7 +5,6 @@ extends VehicleBody3D
 @export var max_steer := 0.5
 
 func _physics_process(delta):
-	# Direção
 	var steer = Input.get_action_strength("move_left") - Input.get_action_strength("move_right")
 	steering = steer * max_steer
 
