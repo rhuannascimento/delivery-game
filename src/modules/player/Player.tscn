@@ -25,7 +25,7 @@ albedo_texture = ExtResource("3_26aeb")
 [sub_resource type="BoxShape3D" id="BoxShape3D_gpkhd"]
 size = Vector3(1.2806854, 1.1577625, 2.805193)
 
-[node name="Player" type="VehicleBody3D"]
+[node name="Player" type="VehicleBody3D" groups=["player"]]
 mass = 350.0
 physics_material_override = SubResource("PhysicsMaterial_w7btl")
 gravity_scale = 2.0

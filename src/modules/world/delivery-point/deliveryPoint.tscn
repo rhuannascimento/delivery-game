@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://ohc0e2mownp1"]
+
+[ext_resource type="Script" uid="uid://b8nd8sw77qn5b" path="res://src/modules/world/delivery-point/delivery_point.gd" id="1_6ucqm"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_08og0"]
+radius = 1.5
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6ucqm"]
+top_radius = 1.5
+bottom_radius = 1.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fe4a7"]
+transparency = 1
+albedo_color = Color(0.19391209, 0.37028953, 1, 0.39215687)
+emission_enabled = true
+emission = Color(0.19215687, 0.36862746, 1, 1)
+emission_energy_multiplier = 3.39
+
+[node name="DeliveryPoint" type="Area3D"]
+script = ExtResource("1_6ucqm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_08og0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_6ucqm")
+surface_material_override/0 = SubResource("StandardMaterial3D_fe4a7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

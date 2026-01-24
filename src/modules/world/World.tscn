@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://ds4h42e61px45"]
+[gd_scene load_steps=22 format=4 uid="uid://ds4h42e61px45"]
 
 [ext_resource type="Material" uid="uid://c5c7c12icm0li" path="res://src/modules/world/tres/floor_grass.tres" id="2_ha0rn"]
 [ext_resource type="PackedScene" uid="uid://d07d1yru4v3lm" path="res://assets/models/kenney_survival-kit/Models/GLB format/rock-c.glb" id="3_wo43a"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cwv5ldewhvnyu" path="res://assets/models/kenney_survival-kit/Models/GLB format/rock-a.glb" id="5_ki43s"]
 [ext_resource type="MeshLibrary" uid="uid://cv7nvh1gpd8xm" path="res://src/modules/world/tres/road_mash.tres" id="5_xi80n"]
 [ext_resource type="MeshLibrary" uid="uid://2fwdoak57s0k" path="res://src/modules/world/tres/grass_mash.tres" id="8_ki43s"]
+[ext_resource type="PackedScene" uid="uid://ohc0e2mownp1" path="res://src/modules/world/delivery-point/deliveryPoint.tscn" id="9_dj7x6"]
 [ext_resource type="MeshLibrary" uid="uid://dflk6ho0pm2yp" path="res://src/modules/world/tres/obstacles_mash.tres" id="9_jefmr"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dj7x6"]
@@ -348,6 +349,21 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_dj7x6")
+
+[node name="DeliveryPoint" parent="." instance=ExtResource("9_dj7x6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.659356, 5.2860603, 23.893496)
+
+[node name="DeliveryPoint2" parent="." instance=ExtResource("9_dj7x6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.797144, 4.790152, -46.845913)
+
+[node name="DeliveryPoint3" parent="." instance=ExtResource("9_dj7x6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.597923, 1.111743, -64.538574)
+
+[node name="DeliveryPoint4" parent="." instance=ExtResource("9_dj7x6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.9628, 1.419764, 11.7565365)
+
+[node name="DeliveryPoint5" parent="." instance=ExtResource("9_dj7x6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.493101, 1.4239717, -59.54681)
 
 [editable path="Wall/rock-c2"]
 [editable path="Wall/rock-c4"]

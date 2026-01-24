@@ -15,6 +15,10 @@ run/main_scene="uid://b56o88a64h4ad"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[global_group]
+
+player=""
+
 [input]
 
 ui_cancel={
