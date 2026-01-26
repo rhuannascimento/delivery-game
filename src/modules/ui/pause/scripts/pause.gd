@@ -7,24 +7,21 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
-		alternar_pause()
+		toggle_pause()
 
-func alternar_pause():
-	var estado_atual = get_tree().paused
-	get_tree().paused = not estado_atual
+func toggle_pause():
+	var actual_state = get_tree().paused
+	get_tree().paused = not actual_state
 	
-	visible = not estado_atual
+	visible = not actual_state
 	
-	if estado_atual:
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	else:
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 
 func _on_return_button_pressed() -> void:
-	alternar_pause()
+	toggle_pause()
 
 
 func _on_back_to_menu_button_pressed() -> void:
-	alternar_pause()
+	toggle_pause()
 	get_tree().change_scene_to_file("res://src/modules/ui/menu/Menu.tscn")
