@@ -1,0 +1,135 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0oy2gyg4kxs5"]
+
+[ext_resource type="Script" uid="uid://dphy7aainmqah" path="res://src/modules/ui/credit/script/credit.gd" id="1_jop5s"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jop5s"]
+line_spacing = 30.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i04ot"]
+
+[node name="Credit" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jop5s")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -576.0
+offset_top = 700.0
+offset_right = 554.0
+offset_bottom = 5228.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Scape Boom
+Versão 1.0
+
+
+-- DESENVOLVIDO POR --
+
+Alfredo Lucas da Silva Neto
+Daniel Muller Rezende
+Rhuan Nascimento Ferreira
+Mário Henrique de Oliveira Cesário
+
+
+
+-- CONTEXTO ACADÊMICO --
+
+Universidade Federal de Juiz de Fora (UFJF)
+Disciplina: Desenvolvimento de Jogos - DCC148
+Professor(a): Marcelo Caniato Renhe
+Semestre: 2º/2025
+
+
+------------------------------------------------------
+CRÉDITOS DE ASSETS 
+------------------------------------------------------
+
+
+-- ARTE VISUAL --
+
+1. Bomb Party - the complete set
+   Autor: devurandom
+   Link: opengameart.org/content/bomb-party-the-complete-set
+
+2. Key Icons
+   Autor: BizmasterStudios
+   Link: opengameart.org/content/key-icons
+
+3. Antifarea's RPG sprite set 1, enlarged w/ transparent background, fixed
+   Autor: Antifarea
+   Link: opengameart.org/content/antifareas-rpg-sprite-set-1-enlarged-w-transparent-background-fixed
+
+4. Pixel Art Top Down
+   Autor: Cainos
+   Link: docs.cainos.net/pixel-art-top-down-basic
+
+
+-- EFEITOS SONOROS --
+
+1. Porta Aberta
+   Autor: SoundReality
+   Link: pixabay.com/sound-effects/opening-door-411632/
+
+2.Porta Fechada
+   Autor: Amphibio
+   Link: pixabay.com/sound-effects/door-close-79921/
+
+3. Baú Aberto
+   Autor: spookymodem
+   Link: pixabay.com/sound-effects/chest-opening-87569/
+
+4. Colocar Item
+   Autor: j1987
+   Link: pixabay.com/sound-effects/put-item-83043/
+
+5. Fim do Tempo
+   Autor: dragon-studio
+   Link: pixabay.com/sound-effects/slow-cinematic-clock-ticking-357979/
+
+6. Música do jogo
+   Autor: XtremeFreddy
+   Link: pixabay.com/sound-effects/game-music-loop-1-143979/
+
+7. Perdeu o jogo
+   Autor: olenchic
+   Link: pixabay.com/sound-effects/fiasco-154915/
+
+8. Venceu o jogo
+   Autor: unadamlar
+   Link: pixabay.com/sound-effects/goodresult-82807/
+
+
+Sons gerados proceduralmente via sfxr.me:
+* Efeito de pegar chave
+* Efeito da explosão
+
+
+"
+label_settings = SubResource("LabelSettings_jop5s")
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_i04ot")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

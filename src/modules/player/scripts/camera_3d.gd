@@ -16,8 +16,6 @@ var pitch := 0.15
 @onready var ray: RayCast3D = $RayCast3D
 
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
 	var dir = _get_orbit_direction()
 	cam.global_position = global_position + dir * distance + Vector3.UP * height
 	cam.look_at(global_position, Vector3.UP)
@@ -29,6 +27,7 @@ func _unhandled_input(event):
 		pitch = clamp(pitch, min_pitch, max_pitch)
 
 func _process(delta):
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	var dir = _get_orbit_direction()
 	var desired_pos = global_position + dir * distance + Vector3.UP * height
 

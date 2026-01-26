@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddxdtfdg46po5"]
+
+[ext_resource type="Script" uid="uid://bxqis8ax4kwhb" path="res://src/modules/ui/pause/scripts/pause.gd" id="1_383de"]
+[ext_resource type="Texture2D" uid="uid://c4j3eqcw8cg1h" path="res://assets/images/ui/Pause_Gemini_Generated_Image.png" id="2_qbp6d"]
+
+[node name="Pause" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_383de")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qbp6d")
+expand_mode = 1
+
+[node name="Container" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.5
+offset_top = -50.5
+offset_right = 117.5
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ReturnButton" type="Button" parent="Container"]
+layout_mode = 2
+text = "Voltar ao jogo"
+
+[node name="BackToMenuButton" type="Button" parent="Container"]
+layout_mode = 2
+text = "Voltar para o menu"
+
+[connection signal="pressed" from="Container/ReturnButton" to="." method="_on_return_button_pressed"]
+[connection signal="pressed" from="Container/BackToMenuButton" to="." method="_on_back_to_menu_button_pressed"]
