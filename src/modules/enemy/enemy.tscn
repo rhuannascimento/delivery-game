@@ -1,0 +1,40 @@
+[gd_scene load_steps=10 format=3 uid="uid://ba7y20emo3dy6"]
+
+[ext_resource type="ArrayMesh" uid="uid://bafijt764ymr8" path="res://assets/images/enemy/truck.obj" id="1_ny188"]
+[ext_resource type="Texture2D" uid="uid://b0hbpx4kh8col" path="res://assets/images/enemy/colormap.png" id="2_5d310"]
+[ext_resource type="Script" uid="uid://3bwv5nb5mvdy" path="res://src/modules/enemy/scripts/enemy.gd" id="3_5d310"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5d310"]
+size = Vector3(1.2416992, 1.271904, 2.8482056)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5d310"]
+albedo_texture = ExtResource("2_5d310")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oky6y"]
+albedo_texture = ExtResource("2_5d310")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7c783"]
+albedo_texture = ExtResource("2_5d310")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ge71k"]
+albedo_texture = ExtResource("2_5d310")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d1do2"]
+albedo_texture = ExtResource("2_5d310")
+
+[node name="Enemy" type="CharacterBody3D"]
+script = ExtResource("3_5d310")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010986328, 0.6832619, 0.035003662)
+shape = SubResource("BoxShape3D_5d310")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_ny188")
+surface_material_override/0 = SubResource("StandardMaterial3D_5d310")
+surface_material_override/1 = SubResource("StandardMaterial3D_oky6y")
+surface_material_override/2 = SubResource("StandardMaterial3D_7c783")
+surface_material_override/3 = SubResource("StandardMaterial3D_ge71k")
+surface_material_override/4 = SubResource("StandardMaterial3D_d1do2")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

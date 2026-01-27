@@ -21,6 +21,11 @@ func delivery_cargo():
 		return true
 	return false
 
+func drop_cargo():
+	if has_package == true:
+		has_package = false
+		$cargo.visible = false
+
 func _physics_process(delta):
 	var steer = Input.get_action_strength("move_left") - Input.get_action_strength("move_right")
 	steering = steer * max_steer

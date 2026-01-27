@@ -31,11 +31,12 @@ radius = 0.24853516
 size = Vector3(1.2806854, 0.88356876, 2.805193)
 
 [node name="Player" type="VehicleBody3D" groups=["player"]]
+collision_layer = 3
 mass = 350.0
 physics_material_override = SubResource("PhysicsMaterial_w7btl")
 gravity_scale = 2.0
 center_of_mass_mode = 1
-center_of_mass = Vector3(0, -0.7, 0)
+center_of_mass = Vector3(0, 0.1, 0)
 linear_damp = 0.4
 angular_damp = 4.0
 script = ExtResource("1_gpkhd")
