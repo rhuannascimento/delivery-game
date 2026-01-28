@@ -5,6 +5,8 @@ extends VehicleBody3D
 @export var max_steer := 0.35
 var has_package: bool = false
 
+signal cargo_delivered
+
 func _ready() -> void:
 	if has_node('cargo'):
 		$cargo.visible = false
@@ -18,6 +20,7 @@ func delivery_cargo():
 	if has_package == true:
 		has_package = false
 		$cargo.visible = false
+		cargo_delivered.emit()
 		return true
 	return false
 
