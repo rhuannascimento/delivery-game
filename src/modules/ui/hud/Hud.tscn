@@ -1,7 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://dtfnx3p73psj0"]
+[gd_scene load_steps=3 format=3 uid="uid://dtfnx3p73psj0"]
 
 [ext_resource type="PackedScene" uid="uid://ddxdtfdg46po5" path="res://src/modules/ui/pause/Pause.tscn" id="1_6v8a4"]
+[ext_resource type="Script" uid="uid://g6oc74dy8oy2" path="res://src/modules/ui/hud/scripts/hud.gd" id="1_u20dy"]
 
 [node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_u20dy")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1151.0
+offset_bottom = 40.0
+
+[node name="TimerLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="ScoreLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 522.0
+offset_top = 13.0
+offset_right = 611.0
+offset_bottom = 36.0
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
 
 [node name="Pause" parent="." instance=ExtResource("1_6v8a4")]
+metadata/_edit_lock_ = true
