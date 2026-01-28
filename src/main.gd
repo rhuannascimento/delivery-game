@@ -1,5 +1,5 @@
 extends Node3D
-var victory_score: int = 5
+var victory_score: int = 1
 var current_score: int = 0
 
 @onready var hud = $Hud
