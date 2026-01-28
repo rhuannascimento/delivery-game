@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bxqis8ax4kwhb" path="res://src/modules/ui/pause/scripts/pause.gd" id="1_383de"]
 [ext_resource type="Texture2D" uid="uid://c4j3eqcw8cg1h" path="res://assets/images/ui/Pause_Gemini_Generated_Image.png" id="2_qbp6d"]
+[ext_resource type="AudioStream" path="res://assets/sounds/tick-deepfrozenapps-397275646-2.ogg" id="3_tick"]
 
 [node name="Pause" type="Control"]
 process_mode = 3
@@ -47,3 +48,7 @@ text = "Voltar para o menu"
 
 [connection signal="pressed" from="Container/ReturnButton" to="." method="_on_return_button_pressed"]
 [connection signal="pressed" from="Container/BackToMenuButton" to="." method="_on_back_to_menu_button_pressed"]
+
+[node name="TickSound" type="AudioStreamPlayer" parent="."]
+autoplay = false
+stream = ExtResource("3_tick")

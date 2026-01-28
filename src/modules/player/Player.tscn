@@ -1,14 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://bm0egqymvjmbh"]
+[gd_scene load_steps=18 format=3 uid="uid://bm0egqymvjmbh"]
 
 [ext_resource type="Script" uid="uid://j47nf4cqt0hh" path="res://src/modules/player/scripts/player.gd" id="1_gpkhd"]
 [ext_resource type="ArrayMesh" uid="uid://q0em5mq8dwaq" path="res://assets/images/player/delivery-flat.obj" id="2_ntuo2"]
 [ext_resource type="Texture2D" uid="uid://dfi6jvpgdoqh3" path="res://assets/images/player/colormap.png" id="3_26aeb"]
 [ext_resource type="Script" uid="uid://besdix8fh0iec" path="res://src/modules/player/scripts/camera_3d.gd" id="3_ntuo2"]
 [ext_resource type="PackedScene" uid="uid://cec117y1blbfw" path="res://assets/models/kenney_survival-kit/Models/GLB format/box-large.glb" id="5_26aeb"]
-[ext_resource type="AudioStream" path="res://assets/sounds/car-crash-sound-376882.ogg" id="6_bat"]
-[ext_resource type="AudioStream" path="res://assets/sounds/engine-6000.ogg" id="7_engine"]
-[ext_resource type="AudioStream" path="res://assets/sounds/re-caminhao.ogg" id="8_re"]
-[ext_resource type="AudioStream" path="res://assets/sounds/truck-horn-2-280800.ogg" id="9_horn"]
+[ext_resource type="AudioStream" uid="uid://ccnpkgac3nn0h" path="res://assets/sounds/car-crash-sound-376882.ogg" id="6_bat"]
+[ext_resource type="AudioStream" uid="uid://csu6toi32it7p" path="res://assets/sounds/engine-6000.ogg" id="7_engine"]
+[ext_resource type="AudioStream" uid="uid://c4y62os5p0dvi" path="res://assets/sounds/re-caminhao.ogg" id="8_re"]
+[ext_resource type="AudioStream" uid="uid://b4lrhlgp506pl" path="res://assets/sounds/truck-horn-2-280800.ogg" id="9_horn"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_w7btl"]
 
@@ -75,30 +75,21 @@ visible = false
 shape = SubResource("BoxShape3D_gpkhd")
 
 [node name="CollisionArea" type="Area3D" parent="."]
-monitoring = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CollisionArea"]
-shape = SubResource("BoxShape3D_gpkhd")
 transform = Transform3D(1, 0, 0, 0, 0.9999603, -0.0089010615, 0, 0.0089010615, 0.9999603, 0.0019454956, 0.7637961, -0.097757176)
+shape = SubResource("BoxShape3D_gpkhd")
 
 [node name="CrashSound" type="AudioStreamPlayer3D" parent="."]
-unit_db = 0.0
-autoplay = false
 stream = ExtResource("6_bat")
 
 [node name="EngineSound" type="AudioStreamPlayer3D" parent="."]
-unit_db = -3.0
-autoplay = false
 stream = ExtResource("7_engine")
 
 [node name="HornSound" type="AudioStreamPlayer3D" parent="."]
-unit_db = 0.0
-autoplay = false
 stream = ExtResource("9_horn")
 
 [node name="ReverseSound" type="AudioStreamPlayer3D" parent="."]
-unit_db = -3.0
-autoplay = false
 stream = ExtResource("8_re")
 
 [node name="VehicleWheel3D" type="VehicleWheel3D" parent="."]

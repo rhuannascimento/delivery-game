@@ -3,8 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://ds4h42e61px45" path="res://src/modules/world/World.tscn" id="1_hk4rc"]
 [ext_resource type="PackedScene" uid="uid://bm0egqymvjmbh" path="res://src/modules/player/Player.tscn" id="2_chrbn"]
 [ext_resource type="PackedScene" uid="uid://dtfnx3p73psj0" path="res://src/modules/ui/hud/Hud.tscn" id="3_chrbn"]
+[ext_resource type="AudioStream" path="res://assets/sounds/blues-country-458436.ogg" id="4_music"]
+[ext_resource type="Script" path="res://src/main.gd" id="5_main"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("5_main")
 
 [node name="Map" parent="." instance=ExtResource("1_hk4rc")]
 
@@ -12,3 +15,8 @@
 transform = Transform3D(0.43070012, 0, 0.90249515, 0, 1, 0, -0.90249515, 0, 0.43070012, -37.05523, 0.4721229, -10.9853735)
 
 [node name="Hud" parent="." instance=ExtResource("3_chrbn")]
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true
+stream = ExtResource("4_music")
+volume_db = -4.0
