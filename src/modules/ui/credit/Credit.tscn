@@ -1,11 +1,46 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0oy2gyg4kxs5"]
+[gd_scene load_steps=6 format=3 uid="uid://c0oy2gyg4kxs5"]
 
 [ext_resource type="Script" uid="uid://dphy7aainmqah" path="res://src/modules/ui/credit/script/credit.gd" id="1_jop5s"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jop5s"]
 line_spacing = 30.0
 
+[sub_resource type="Animation" id="Animation_i04ot"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 700)]
+}
+
+[sub_resource type="Animation" id="Animation_jop5s"]
+resource_name = "credit"
+length = 40.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 40),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 700), Vector2(0, -3400)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i04ot"]
+_data = {
+&"RESET": SubResource("Animation_i04ot"),
+&"credit": SubResource("Animation_jop5s")
+}
 
 [node name="Credit" type="Control"]
 layout_mode = 3
@@ -38,7 +73,7 @@ grow_horizontal = 2
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Scape Boom
+text = "Cargo Rush
 Versão 1.0
 
 
@@ -66,64 +101,36 @@ CRÉDITOS DE ASSETS
 
 -- ARTE VISUAL --
 
-1. Bomb Party - the complete set
-   Autor: devurandom
-   Link: opengameart.org/content/bomb-party-the-complete-set
+1. Carro
+   Link: https://www.kenney.nl/assets/car-kit
 
-2. Key Icons
-   Autor: BizmasterStudios
-   Link: opengameart.org/content/key-icons
+2. Estradas
+   Link: https://www.kenney.nl/assets/3d-road-tiles
 
-3. Antifarea's RPG sprite set 1, enlarged w/ transparent background, fixed
-   Autor: Antifarea
-   Link: opengameart.org/content/antifareas-rpg-sprite-set-1-enlarged-w-transparent-background-fixed
+3. Elementos do mapa
+   Link: https://www.kenney.nl/assets/survival-kit
 
-4. Pixel Art Top Down
-   Autor: Cainos
-   Link: docs.cainos.net/pixel-art-top-down-basic
 
 
 -- EFEITOS SONOROS --
 
-1. Porta Aberta
-   Autor: SoundReality
-   Link: pixabay.com/sound-effects/opening-door-411632/
+1. Musica Country
+   Link: https://pixabay.com/music/rock-blues-country-458436/
 
-2.Porta Fechada
-   Autor: Amphibio
-   Link: pixabay.com/sound-effects/door-close-79921/
+2. Re Caminhao
+   Link: https://www.myinstants.com/pt/instant/re-caminhao-67082/
 
-3. Baú Aberto
-   Autor: spookymodem
-   Link: pixabay.com/sound-effects/chest-opening-87569/
+3. Motor:
+ Link: https://pixabay.com/sound-effects/city-engine-6000/
 
-4. Colocar Item
-   Autor: j1987
-   Link: pixabay.com/sound-effects/put-item-83043/
+4. Buzina:
+   Link: https://pixabay.com/sound-effects/film-special-effects-truck-horn-2-280800/
 
-5. Fim do Tempo
-   Autor: dragon-studio
-   Link: pixabay.com/sound-effects/slow-cinematic-clock-ticking-357979/
+5. Vitoria:
+  Link: https://pixabay.com/sound-effects/film-special-effects-goodresult-82807/
 
-6. Música do jogo
-   Autor: XtremeFreddy
-   Link: pixabay.com/sound-effects/game-music-loop-1-143979/
-
-7. Perdeu o jogo
-   Autor: olenchic
-   Link: pixabay.com/sound-effects/fiasco-154915/
-
-8. Venceu o jogo
-   Autor: unadamlar
-   Link: pixabay.com/sound-effects/goodresult-82807/
-
-
-Sons gerados proceduralmente via sfxr.me:
-* Efeito de pegar chave
-* Efeito da explosão
-
-
-"
+6. Derrota:
+  Link: https://pixabay.com/sound-effects/film-special-effects-fiasco-154915/"
 label_settings = SubResource("LabelSettings_jop5s")
 horizontal_alignment = 1
 
