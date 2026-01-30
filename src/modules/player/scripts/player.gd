@@ -11,10 +11,9 @@ var time_since_reset := 0.0
 var has_package: bool = false
 @export var crash_sound: AudioStream
 
-# CONFIGURAÇÕES DE SOM DO MOTOR
-@export var min_pitch := 0.6  # Som do motor parado (grave)
-@export var max_pitch := 2.0  # Som do motor em velocidade máxima (agudo)
-@export var pitch_speed_scale := 30.0 # Quanto maior o numero, mais demora pro som ficar agudo
+@export var min_pitch := 0.6
+@export var max_pitch := 2.0 
+@export var pitch_speed_scale := 30.0
 
 @onready var _crash_player: AudioStreamPlayer3D = $CrashSound
 @onready var _engine_player: AudioStreamPlayer3D = $EngineSound
@@ -30,7 +29,6 @@ func _ready() -> void:
 	if has_node('CollisionArea'):
 		$CollisionArea.body_entered.connect(Callable(self, "_on_CollisionArea_body_entered"))
 	
-	# Configuração do som de batida
 	if crash_sound != null:
 		_crash_player.stream = crash_sound
 	else:
@@ -38,13 +36,11 @@ func _ready() -> void:
 		if ResourceLoader.exists(crash_path):
 			_crash_player.stream = ResourceLoader.load(crash_path)
 
-	# Configuração e INÍCIO do som do motor
 	if not _engine_player.stream:
 		var engine_path := "res://assets/sounds/engine-6000.ogg"
 		if ResourceLoader.exists(engine_path):
 			_engine_player.stream = ResourceLoader.load(engine_path)
 	
-	# MUDANÇA: O motor liga assim que o jogo começa e nunca para
 	if _engine_player.stream:
 		_engine_player.play()
 
@@ -52,7 +48,6 @@ func collect_cargo():
 	if has_package == false:
 		has_package = true
 		$cargo.visible = true
-		# Removi o engine.stop() daqui. O motor continua rodando enquanto buzina.
 		if _crash_player and _crash_player.playing:
 			_crash_player.stop()
 		if _reverse_player and _reverse_player.playing:
@@ -64,7 +59,6 @@ func delivery_cargo():
 	if has_package == true:
 		has_package = false
 		$cargo.visible = false
-		# Removi o engine.stop() daqui também.
 		if _crash_player and _crash_player.playing:
 			_crash_player.stop()
 		if _reverse_player and _reverse_player.playing:
@@ -94,7 +88,6 @@ func _physics_process(delta):
 			brake = 0.0
 			engine_force = engine_power
 			
-			# Parar o som de ré se estiver indo pra frente
 			if _reverse_player and _reverse_player.playing:
 				_reverse_player.stop()
 				
@@ -103,31 +96,23 @@ func _physics_process(delta):
 			brake = 0.0
 			engine_force = -engine_power * 0.85
 			
-			# Tocar som de ré (sem parar o motor principal, apenas sobrepondo)
 			if _reverse_player and _reverse_player.stream:
 				if not _reverse_player.playing:
 					_reverse_player.play()
 	else:
 		engine_force = 0.0
-		# Removi o _engine_player.stop() daqui. O motor fica em marcha lenta (idle).
 		if _reverse_player and _reverse_player.playing:
 			_reverse_player.stop()
 
-	# --- LÓGICA DO SOM DO MOTOR ---
 	if _engine_player.stream:
-		# Pega a velocidade real do carro (independente se está acelerando ou na banguela)
 		var current_speed = linear_velocity.length()
 		
-		# Calcula o Pitch: Começa em 0.6 e aumenta conforme a velocidade
 		var target_pitch = min_pitch + (current_speed / pitch_speed_scale)
 		
-		# Limita para não ficar agudo demais (tipo mosquito)
 		target_pitch = clamp(target_pitch, min_pitch, max_pitch)
 		
-		# Lerp para o som mudar suavemente, e não bruscamente
 		_engine_player.pitch_scale = lerp(_engine_player.pitch_scale, target_pitch, delta * 5.0)
 
-	# --- RESET ---
 	time_since_reset += delta
 	if Input.is_key_pressed(KEY_R) and time_since_reset > reset_cooldown:
 		_unstuck_car()
