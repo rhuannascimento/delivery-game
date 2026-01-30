@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://b56o88a64h4ad"]
+[gd_scene load_steps=6 format=3 uid="uid://b56o88a64h4ad"]
 
+[ext_resource type="Script" uid="uid://dmup20t5o44qs" path="res://src/main.gd" id="1_5qjmp"]
 [ext_resource type="PackedScene" uid="uid://ds4h42e61px45" path="res://src/modules/world/World.tscn" id="1_hk4rc"]
 [ext_resource type="PackedScene" uid="uid://bm0egqymvjmbh" path="res://src/modules/player/Player.tscn" id="2_chrbn"]
 [ext_resource type="PackedScene" uid="uid://dtfnx3p73psj0" path="res://src/modules/ui/hud/Hud.tscn" id="3_chrbn"]
 [ext_resource type="PackedScene" uid="uid://ba7y20emo3dy6" path="res://src/modules/enemy/enemy.tscn" id="4_5qjmp"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node3D"]
+script = ExtResource("1_5qjmp")
 
 [node name="Map" parent="." instance=ExtResource("1_hk4rc")]
 
@@ -15,18 +17,32 @@ transform = Transform3D(0.43070012, 0, 0.90249515, 0, 1, 0, -0.90249515, 0, 0.43
 [node name="Hud" parent="." instance=ExtResource("3_chrbn")]
 
 [node name="Enemy" parent="." instance=ExtResource("4_5qjmp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.483, 0.5, -45.431)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5761647, 0.5, -52.74978)
 
 [node name="Enemy2" parent="." instance=ExtResource("4_5qjmp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.751, 0.5, 10.129)
+transform = Transform3D(0.46959487, 0, -0.882882, 0, 1, 0, 0.882882, 0, 0.46959487, 36.01097, 0.5, -6.3349094)
 
 [node name="Enemy3" parent="." instance=ExtResource("4_5qjmp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.058, 0.5, 11.283)
+transform = Transform3D(0.47731212, 0, 0.8787338, 0, 1, 0, -0.8787338, 0, 0.47731212, 8.707077, 0.5, 4.634364)
 
 [node name="Enemy4" parent="." instance=ExtResource("4_5qjmp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.234, 0.5, 0)
+transform = Transform3D(-0.6553211, 0, -0.7553504, 0, 1, 0, 0.7553504, 0, -0.6553211, -10.881611, 0.5, -4.098462)
+
+[node name="Enemy5" parent="." instance=ExtResource("4_5qjmp")]
+transform = Transform3D(0.17471382, 0, 0.98461926, 0, 1, 0, -0.98461926, 0, 0.17471382, 22.413168, 0.5, -26.130524)
+
+[node name="Enemy6" parent="." instance=ExtResource("4_5qjmp")]
+transform = Transform3D(0.9701435, 0, -0.24253155, 0, 1, 0, 0.24253155, 0, 0.9701435, 28.661247, 0.5, -69.11333)
+
+[node name="Enemy7" parent="." instance=ExtResource("4_5qjmp")]
+transform = Transform3D(-0.70660067, 0, 0.70761263, 0, 1, 0, -0.70761263, 0, -0.70660067, -14.330413, 0.5, -27.506126)
+
+[connection signal="cargo_delivered" from="Player" to="." method="_on_player_cargo_delivered"]
 
 [editable path="Enemy"]
 [editable path="Enemy2"]
 [editable path="Enemy3"]
 [editable path="Enemy4"]
+[editable path="Enemy5"]
+[editable path="Enemy6"]
+[editable path="Enemy7"]

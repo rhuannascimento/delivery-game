@@ -4,8 +4,8 @@ extends CharacterBody3D
 @onready var agent := $NavigationAgent3D
 
 @export var speed := 5.0
-@export var backoff_speed := 4.0
-@export var backoff_distance := 2.0
+@export var backoff_speed := 3.0
+@export var backoff_distance := 5.0
 @export var tilt_strength := 0.6
 @export var tilt_lerp := 6.0
 @export var rotation_lerp := 8.0
@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 
 	var target: Vector3
 
-	if global_position.distance_to(player.global_position) < 10:
+	if global_position.distance_to(player.global_position) < 25:
 		target = player.global_position
 	else:
 		if global_position.distance_to(start_position) > 2:
@@ -101,5 +101,7 @@ func _check_collisions():
 		var collision = get_slide_collision(i)
 		if collision.get_collider() == player and not is_backing_off:
 			player.drop_cargo()
+			get_tree().call_group("pontos_coleta", "show_point")
+			get_tree().call_group("game_manager", "registrar_dano")
 			is_backing_off = true
 			backoff_start_position = global_position

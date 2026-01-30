@@ -11,9 +11,3 @@ func _on_body_entered(body: Node3D) -> void:
 			queue_free()
 			pickup_point.show_point()
 			
-
-	
-	
-	
-	
-	

@@ -1,7 +1,62 @@
-[gd_scene load_steps=2 format=3 uid="uid://dtfnx3p73psj0"]
+[gd_scene load_steps=3 format=3 uid="uid://dtfnx3p73psj0"]
 
 [ext_resource type="PackedScene" uid="uid://ddxdtfdg46po5" path="res://src/modules/ui/pause/Pause.tscn" id="1_6v8a4"]
+[ext_resource type="Script" uid="uid://g6oc74dy8oy2" path="res://src/modules/ui/hud/scripts/hud.gd" id="1_u20dy"]
 
 [node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_u20dy")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1151.0
+offset_bottom = 40.0
+
+[node name="TimerLabel" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 94.5
+offset_top = -11.0
+offset_right = 134.5
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScoreLabel" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.5
+offset_top = -11.5
+offset_right = 44.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LifeLabel" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -187.5
+offset_top = -11.0
+offset_right = -147.5
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
 
 [node name="Pause" parent="." instance=ExtResource("1_6v8a4")]
+visible = false
+metadata/_edit_lock_ = true
