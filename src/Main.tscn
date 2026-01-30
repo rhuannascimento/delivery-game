@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b56o88a64h4ad"]
+[gd_scene load_steps=7 format=3 uid="uid://b56o88a64h4ad"]
 
 [ext_resource type="Script" uid="uid://dmup20t5o44qs" path="res://src/main.gd" id="1_5qjmp"]
 [ext_resource type="PackedScene" uid="uid://ds4h42e61px45" path="res://src/modules/world/World.tscn" id="1_hk4rc"]
 [ext_resource type="PackedScene" uid="uid://bm0egqymvjmbh" path="res://src/modules/player/Player.tscn" id="2_chrbn"]
 [ext_resource type="PackedScene" uid="uid://dtfnx3p73psj0" path="res://src/modules/ui/hud/Hud.tscn" id="3_chrbn"]
 [ext_resource type="PackedScene" uid="uid://ba7y20emo3dy6" path="res://src/modules/enemy/enemy.tscn" id="4_5qjmp"]
+[ext_resource type="AudioStream" uid="uid://c8j05etdbpyh4" path="res://assets/sounds/blues-country-458436.ogg" id="5_music"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_5qjmp")
@@ -32,10 +33,15 @@ transform = Transform3D(-0.6553211, 0, -0.7553504, 0, 1, 0, 0.7553504, 0, -0.655
 transform = Transform3D(0.17471382, 0, 0.98461926, 0, 1, 0, -0.98461926, 0, 0.17471382, 22.413168, 0.5, -26.130524)
 
 [node name="Enemy6" parent="." instance=ExtResource("4_5qjmp")]
-transform = Transform3D(0.9701435, 0, -0.24253155, 0, 1, 0, 0.24253155, 0, 0.9701435, 28.661247, 0.5, -69.11333)
+transform = Transform3D(-0.5391972, 0, -0.84217966, 0, 1, 0, 0.84217966, 0, -0.5391972, 39.624348, 0.5, -55.34222)
 
 [node name="Enemy7" parent="." instance=ExtResource("4_5qjmp")]
 transform = Transform3D(-0.70660067, 0, 0.70761263, 0, 1, 0, -0.70761263, 0, -0.70660067, -14.330413, 0.5, -27.506126)
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_music")
+volume_db = -4.0
+autoplay = true
 
 [connection signal="cargo_delivered" from="Player" to="." method="_on_player_cargo_delivered"]
 

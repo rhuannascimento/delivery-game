@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ch7fg4vo4vqbm"]
+[gd_scene load_steps=4 format=3 uid="uid://ch7fg4vo4vqbm"]
 
 [ext_resource type="Script" uid="uid://dik1fnv12ahkc" path="res://src/modules/ui/victory/scripts/victory.gd" id="1_i31rw"]
 [ext_resource type="Texture2D" uid="uid://cuad4hha3vbg3" path="res://assets/images/ui/Victory_Gemini_Generated_Image.png" id="2_3sl67"]
+[ext_resource type="AudioStream" uid="uid://c8m66h4e0pd6e" path="res://assets/sounds/goodresult-82807.mp3" id="3_n4vgv"]
 
 [node name="Victory" type="Control"]
 layout_mode = 3
@@ -43,6 +44,9 @@ text = "Jogar novamente"
 [node name="BackToMenuButton" type="Button" parent="Container"]
 layout_mode = 2
 text = "Voltar para o menu"
+
+[node name="SFX_Victory" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_n4vgv")
 
 [connection signal="pressed" from="Container/TryAgainButton" to="." method="_on_try_again_button_pressed"]
 [connection signal="pressed" from="Container/BackToMenuButton" to="." method="_on_back_to_menu_button_pressed"]

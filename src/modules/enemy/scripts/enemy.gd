@@ -3,12 +3,14 @@ extends CharacterBody3D
 @onready var player := $"../Player"
 @onready var agent := $NavigationAgent3D
 
-@export var speed := 5.0
+@export var speed := 7.0
 @export var backoff_speed := 3.0
 @export var backoff_distance := 5.0
 @export var tilt_strength := 0.6
 @export var tilt_lerp := 6.0
 @export var rotation_lerp := 8.0
+
+@onready var angry_sound = $SFX_Angry
 
 var start_position: Vector3
 var is_backing_off := false
@@ -101,6 +103,7 @@ func _check_collisions():
 		var collision = get_slide_collision(i)
 		if collision.get_collider() == player and not is_backing_off:
 			player.drop_cargo()
+			angry_sound.play()
 			get_tree().call_group("pontos_coleta", "show_point")
 			get_tree().call_group("game_manager", "registrar_dano")
 			is_backing_off = true

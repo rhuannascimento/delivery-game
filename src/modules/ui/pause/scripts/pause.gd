@@ -19,9 +19,15 @@ func toggle_pause():
 	
 
 func _on_return_button_pressed() -> void:
+	if has_node('TickSound'):
+		$TickSound.play()
+		await get_tree().create_timer(0.08).timeout
 	toggle_pause()
 
 
 func _on_back_to_menu_button_pressed() -> void:
+	if has_node('TickSound'):
+		$TickSound.play()
+		await get_tree().create_timer(0.08).timeout
 	toggle_pause()
 	get_tree().change_scene_to_file("res://src/modules/ui/menu/Menu.tscn")

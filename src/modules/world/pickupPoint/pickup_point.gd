@@ -5,7 +5,8 @@ func _ready() -> void:
 	add_to_group("pontos_coleta")
 	pass 
 
-func _process(delta: float) -> void:
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
 	pass
 
 func _on_body_entered(body: Node3D) -> void:
@@ -22,4 +23,3 @@ func show_point():
 func hide_point():
 	visible = false
 	monitoring = false # Volta a detectar colisão
-		

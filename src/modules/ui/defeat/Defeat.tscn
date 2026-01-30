@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvsunku1xjvyo"]
+[gd_scene load_steps=4 format=3 uid="uid://dvsunku1xjvyo"]
 
 [ext_resource type="Script" uid="uid://bplelt4de6pxq" path="res://src/modules/ui/defeat/scripts/defeat.gd" id="1_k2oym"]
 [ext_resource type="Texture2D" uid="uid://mx8x41mpjte3" path="res://assets/images/ui/Defeat_Gemini_Generated_Image.png" id="2_jtv02"]
+[ext_resource type="AudioStream" uid="uid://cvwh2ouivyhxu" path="res://assets/sounds/fiasco-154915.mp3" id="3_b1iwn"]
 
 [node name="Defeat" type="Control"]
 layout_mode = 3
@@ -43,6 +44,9 @@ text = "Tentar novamente"
 [node name="BackToMenuButton" type="Button" parent="Container"]
 layout_mode = 2
 text = "Voltar para o menu"
+
+[node name="SFX_Defeat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_b1iwn")
 
 [connection signal="pressed" from="Container/TryAgainButton" to="." method="_on_try_again_button_pressed"]
 [connection signal="pressed" from="Container/BackToMenuButton" to="." method="_on_back_to_menu_button_pressed"]

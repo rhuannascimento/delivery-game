@@ -6,12 +6,12 @@ extends CanvasLayer
 @onready var timer: Timer = $Timer
 
 
-var tempo_restante: int = 60 * 6 
+var tempo_restante: int = 60 * 3.5 
 
 var victory_score = 5
 var current_score = -1
 
-var max_hits = 10
+var max_hits = 4
 var current_hits = 0
 
 func _ready() -> void:
